@@ -1,11 +1,24 @@
-import "bootstrap";
-import "./style.css";
 
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+//Domain name generator
+let pronoun = ['the', 'our'];
+let adj = ['great', 'big'];
+let noun = ['jogger', 'viernes', 'skynet'];
+let extensions = ["com", "es", "net"];
 
-window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
-};
+for (let first of pronoun){
+  for (let second of adj){
+    for (let third of noun){
+      for (let dot of extensions){
+
+        if (dot == third.slice(third.length - dot.length,third.length)){
+          console.log(first+second+third.slice(0,third.length - dot.length) +"."+dot);
+        }else
+        {
+          console.log(first+second+third+"."+dot);
+        }
+      }
+    }
+  }
+}
+
