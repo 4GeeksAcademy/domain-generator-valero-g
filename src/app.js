@@ -1,21 +1,21 @@
 
 
 //Domain name generator
-let pronoun = ['the', 'our'];
-let adj = ['great', 'big'];
-let noun = ['jogger', 'viernes', 'skynet'];
+let pronouns = ['the', 'our'];
+let adjs = ['great', 'big'];
+let nouns = ['jogger', 'viernes', 'skynet'];
 let extensions = ["com", "es", "net"];
 
-for (let first of pronoun){
-  for (let second of adj){
-    for (let third of noun){
-      for (let dot of extensions){
+for (let pronoun of pronouns){
+  for (let adj of adjs){
+    for (let noun of nouns){
+      for (let extension of extensions){
 
-        if (dot == third.slice(third.length - dot.length,third.length)){
-          console.log(first+second+third.slice(0,third.length - dot.length) +"."+dot);
+        if (extension == noun.slice(noun.length - extension.length,noun.length)){
+          console.log(pronoun+adj+noun.slice(0,noun.length - extension.length) +"."+extension);
         }else
         {
-          console.log(first+second+third+"."+dot);
+          console.log(pronoun+adj+noun+"."+extension);
         }
       }
     }
